@@ -3,9 +3,9 @@ using WebApiAutores.Dominio.Entidades;
 
 namespace ApiAutores.Infraestructura.Persistencia
 {
-    public class AppicationDbContext : DbContext
+    public class ApplicationDbContext : DbContext
     {
-        public AppicationDbContext(DbContextOptions options) : base(options)
+        public ApplicationDbContext(DbContextOptions options) : base(options)
         {
         }
 
