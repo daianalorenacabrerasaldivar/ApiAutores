@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ApiAutores.Infraestructura.Persistencia;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using WebApiAutores.Dominio.Entidades;
 
 namespace WebApiAutores.Api.Controllers
@@ -7,14 +9,54 @@ namespace WebApiAutores.Api.Controllers
     [Route("api/autores")]
     public class AutoresController : ControllerBase
     {
-        [HttpGet]
-        public ActionResult<List<Autor>> Get()
+        private readonly ApplicationDbContext context;
+
+        public AutoresController(ApplicationDbContext context)
         {
-            return new List<Autor>()
+            this.context = context;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<List<Autor>>> Get()
+        {
+            return await context.Autores.ToListAsync<Autor>();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Post(Autor autor)
+        {
+            context.Add(autor);
+            await context.SaveChangesAsync();
+            return Ok();
+        }
+        [HttpPut("{id:int}")]
+        public async Task<ActionResult> Put(Autor autor, int id)
+        {
+            if (autor.Id != id)
             {
-                new Autor() { Id = 1, Nombre = "Felipe" },
-                new Autor() { Id = 2, Nombre = "Claudia" }
-            };
+                return BadRequest("El id del autor no coincide con el id de la url");
+            }
+            var existe = await context.Autores.AnyAsync(x => x.Id == id);
+            if (existe)
+            {
+                return NotFound();
+            }
+            context.Update(autor);
+            await context.SaveChangesAsync();
+            return Ok();
+        }
+
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var existe = await context.Autores.AnyAsync(x => x.Id == id);
+            if (existe)
+            {
+                return NotFound();
+            }
+            context.Remove(new Autor() { Id = id });
+            await context.SaveChangesAsync();
+            return Ok();
         }
     }
 }

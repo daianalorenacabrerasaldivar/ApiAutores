@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ApiAutores.Dominio.Entidades;
+using Microsoft.EntityFrameworkCore;
 using WebApiAutores.Dominio.Entidades;
 
 namespace ApiAutores.Infraestructura.Persistencia
@@ -10,6 +11,7 @@ namespace ApiAutores.Infraestructura.Persistencia
         }
 
         public DbSet<Autor> Autores { get; set; }
+        public DbSet<Libro> Libros { get; set; }
 
     }
 }
