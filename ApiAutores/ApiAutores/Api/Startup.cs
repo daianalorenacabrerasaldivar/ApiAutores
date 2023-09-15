@@ -18,8 +18,9 @@ namespace WebApiAutores.Api
             // Add services to the container.
             services.AddControllers();
             //confiugracion de servivio ApplicationDBcontex
-            services.AddDbContext<ApplicationDbContext>(
+           /* services.AddDbContext<ApplicationDbContext>(
          options => options.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
+           */
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             services.AddEndpointsApiExplorer();

@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Aplicacion\" />
+    <Folder Include="Aplicacion\NewFolder\" />
     <Folder Include="Infraestructura\Persistencia\Configuracion\" />
   </ItemGroup>
 

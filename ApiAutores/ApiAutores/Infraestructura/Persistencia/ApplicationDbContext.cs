@@ -4,6 +4,7 @@ using WebApiAutores.Dominio.Entidades;
 
 namespace ApiAutores.Infraestructura.Persistencia
 {
+    /*
     public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions options) : base(options)
@@ -14,4 +15,5 @@ namespace ApiAutores.Infraestructura.Persistencia
         public DbSet<Libro> Libros { get; set; }
 
     }
+    */
 }
