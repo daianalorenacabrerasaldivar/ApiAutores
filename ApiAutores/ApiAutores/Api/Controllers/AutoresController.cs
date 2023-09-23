@@ -9,7 +9,7 @@ namespace WebApiAutores.Api.Controllers
     [Route("api/autores")]
     public class AutoresController : ControllerBase
     {
-        /*private readonly ApplicationDbContext context;
+        private readonly ApplicationDbContext context;
 
         public AutoresController(ApplicationDbContext context)
         {
@@ -19,7 +19,7 @@ namespace WebApiAutores.Api.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Autor>>> Get()
         {
-           // return await context.Autores.ToListAsync<Autor>();
+            return await context.Autores.ToListAsync<Autor>();
         }
 
         [HttpPost]
@@ -58,6 +58,6 @@ namespace WebApiAutores.Api.Controllers
             await context.SaveChangesAsync();
             return Ok();
         }
-    */
+    
 }
 }
