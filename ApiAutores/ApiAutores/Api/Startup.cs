@@ -1,26 +1,32 @@
 ﻿using ApiAutores.Infraestructura.Persistencia;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace WebApiAutores.Api
 {
     public class Startup
     {
+        public IConfiguration _Configuration { get; }
+
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            _Configuration = configuration;
         }
-
-        public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
             // Add services to the container.
             services.AddControllers();
-            //confiugracion de servicio ApplicationDBcontex
-           services.AddDbContext<ApplicationDbContext>(
-         options => options.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
-           
+            //configuracion de servicio ApplicationDBcontex
+            services.AddDbContext<ApplicationDbContext>(
+          options => options.UseSqlServer(_Configuration.GetConnectionString("defaultConnection"))
+          );
+
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             services.AddEndpointsApiExplorer();

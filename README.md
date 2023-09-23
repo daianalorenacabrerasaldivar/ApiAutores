@@ -9,3 +9,14 @@ Fue desarrollada guiandomé por varios cursos:
  * Arquitectura limpia con lo que aprendí en https://www.youtube.com/watch?v=aXsYR9sUqZc y otros cursos más.
 
 más adelante se piensa hacer la parte del frontend con blazor o con react.
+
+Para la base:
+En la consola Packege Manager Console
+Crear una migración (formato que se va a tener la base)
+-> Add-Migration nombredelamigracion
+Para aplicar las migraciones a la base de datos
+-> Update-Database
+
+
+nombre: Usuario1
+contraseña: Usuario1
