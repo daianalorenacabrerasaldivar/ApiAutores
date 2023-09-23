@@ -37,7 +37,7 @@ namespace WebApiAutores.Api.Controllers
                 return BadRequest("El id del autor no coincide con el id de la url");
             }
             var existe = await context.Autores.AnyAsync(x => x.Id == id);
-            if (existe)
+            if (!existe)
             {
                 return NotFound();
             }
@@ -50,7 +50,7 @@ namespace WebApiAutores.Api.Controllers
         public async Task<ActionResult> Delete(int id)
         {
             var existe = await context.Autores.AnyAsync(x => x.Id == id);
-            if (existe)
+            if (!existe)
             {
                 return NotFound();
             }

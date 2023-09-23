@@ -17,6 +17,11 @@ Crear una migración (formato que se va a tener la base)
 Para aplicar las migraciones a la base de datos
 -> Update-Database
 
+Documentación Swagger
+url https://localhost:"NUMERODEPUERTO"/swagger/index.html
 
+Usuario de base
 nombre: Usuario1
 contraseña: Usuario1
+
+
