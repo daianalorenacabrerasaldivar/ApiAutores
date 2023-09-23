@@ -17,7 +17,7 @@ namespace WebApiAutores.Api
         {
             // Add services to the container.
             services.AddControllers();
-            //confiugracion de servivio ApplicationDBcontex
+            //confiugracion de servicio ApplicationDBcontex
            services.AddDbContext<ApplicationDbContext>(
          options => options.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
            
