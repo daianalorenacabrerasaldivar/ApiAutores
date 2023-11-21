@@ -1,5 +1,5 @@
 # ApiAutores
- ApiAutores Esta api esta desarrollada en .Net Core 6
+ ApiAutores Esta api esta desarrollada en .Net Core 8
  
 Fue desarrollada guiandomé por varios cursos:
  * https://www.udemy.com/course/construyendo-web-apis-restful-con-aspnet-core/
