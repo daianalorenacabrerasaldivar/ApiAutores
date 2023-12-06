@@ -19,7 +19,7 @@ namespace WebApiAutores.Api.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Autor>>> Get()
         {
-            return await context.Autores.ToListAsync<Autor>();
+            return await context.Autores.Include(_ => _.Libros).ToListAsync<Autor>();
         }
 
         [HttpPost]
