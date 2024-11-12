@@ -8,6 +8,10 @@ Fue desarrollada guiandomé por varios cursos:
  * https://app.pluralsight.com/library/courses/d1a07995-8bbd-4124-a48f-b1f7f672091e/table-of-contents ( Unit Testing an ASP.NET Core 6 Web API)
  * Arquitectura limpia con lo que aprendí en https://www.youtube.com/watch?v=aXsYR9sUqZc y otros cursos más.
 
+Se debe agregar:
+Configuración Routing, Authenticación y Authorization.
+Configuración RateLimit
+
 más adelante se piensa hacer la parte del frontend con blazor o con react.
 
 Para la base:
